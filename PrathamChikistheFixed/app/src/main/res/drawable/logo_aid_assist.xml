@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Circle Container -->
+    <path
+        android:fillColor="#10069F"
+        android:pathData="M24,2 A22,22 0 1,0 24,46 A22,22 0 1,0 24,2 Z" />
+
+    <!-- Pure Medical Cross + Assistance symbol -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M22,14 h4 v7 h7 v4 h-7 v7 h-4 v-7 h-7 v-4 h7 z" />
+</vector>
+

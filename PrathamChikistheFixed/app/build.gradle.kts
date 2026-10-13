@@ -35,11 +35,12 @@ android {
 
     signingConfigs {
         create("release") {
-            if (keystorePropertiesFile.exists()) {
-                storeFile = file(keystoreProperties["storeFile"] as String)
-                storePassword = keystoreProperties["storePassword"] as String
-                keyAlias = keystoreProperties["keyAlias"] as String
-                keyPassword = keystoreProperties["keyPassword"] as String
+            val storeFilePath = keystoreProperties["storeFile"] as? String
+            if (keystorePropertiesFile.exists() && !storeFilePath.isNullOrBlank() && file(storeFilePath).exists()) {
+                storeFile = file(storeFilePath)
+                storePassword = keystoreProperties["storePassword"] as? String ?: ""
+                keyAlias = keystoreProperties["keyAlias"] as? String ?: ""
+                keyPassword = keystoreProperties["keyPassword"] as? String ?: ""
             }
         }
     }
@@ -47,7 +48,12 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            signingConfig = signingConfigs.getByName("release")
+            val relConfig = signingConfigs.getByName("release")
+            if (relConfig.storeFile != null && relConfig.storeFile!!.exists()) {
+                signingConfig = relConfig
+            } else {
+                signingConfig = signingConfigs.getByName("debug")
+            }
         }
     }
 }
@@ -75,6 +81,7 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.1.1")
     implementation("com.google.android.gms:play-services-location:21.3.0")
 
+    testImplementation("junit:junit:4.13.2")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>AID-ASSIST | Emergency First Aid Companion</title>
+<!-- Google Fonts: Playfair Display & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#05006c",
+            "inverse-on-surface": "#f3eff7",
+            "secondary-fixed-dim": "#c1c1ff",
+            "surface-container-high": "#eae7ee",
+            "outline-variant": "#c7c5d6",
+            "surface-container": "#f0ecf4",
+            "tertiary-container": "#650001",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb4a8",
+            "primary-container": "#10069f",
+            "on-tertiary-fixed": "#410000",
+            "inverse-surface": "#303035",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#c0c1ff",
+            "tertiary": "#3e0000",
+            "surface-tint": "#4a4dce",
+            "surface-container-low": "#f6f2fa",
+            "surface-container-highest": "#e4e1e9",
+            "outline": "#767685",
+            "surface-bright": "#fbf8ff",
+            "secondary": "#3d38e6",
+            "on-background": "#1b1b20",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e1e9",
+            "on-primary-container": "#858aff",
+            "on-secondary-fixed-variant": "#291dd7",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#930002",
+            "on-tertiary-container": "#ff614e",
+            "surface-dim": "#dcd9e0",
+            "surface": "#fbf8ff",
+            "error": "#ba1a1a",
+            "secondary-container": "#5856ff",
+            "on-primary-fixed-variant": "#3032b5",
+            "on-secondary-container": "#f6f2ff",
+            "on-surface": "#1b1b20",
+            "secondary-fixed": "#e1dfff",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-surface-variant": "#464554",
+            "primary-fixed": "#e1e0ff",
+            "primary": "#050066",
+            "on-secondary-fixed": "#09006b",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffdad5",
+            "background": "#fbf8ff",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "margin": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Playfair Display"],
+            "body-xl": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-md": ["Playfair Display"],
+            "emergency-callout": ["Inter"],
+            "headline-xl": ["Playfair Display"],
+            "label-lg": ["Inter"],
+            "headline-lg": ["Playfair Display"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-xl": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "emergency-callout": ["20px", {"lineHeight": "24px", "letterSpacing": "0.03em", "fontWeight": "800"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-lg": ["15px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    @keyframes pulse-emergency {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(217, 45, 32, 0.45); }
+      50% { box-shadow: 0 0 0 10px rgba(217, 45, 32, 0); }
+    }
+    .pulse-urgent {
+      animation: pulse-emergency 2s infinite ease-in-out;
+    }
+    /* Hide scrollbars for crisp native viewport feeling */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex justify-center min-h-screen selection:bg-primary-fixed selection:text-primary">
+<!-- Mobile Device Constraint Shell (390px baseline) -->
+<div class="w-full max-w-[420px] bg-surface min-h-screen relative flex flex-col pb-28 shadow-2xl border-x border-outline-variant/30">
+<!-- Top Status / Diagnostic Header -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin-mobile py-space-xs flex items-center justify-between border-b border-outline-variant/40">
+<!-- Offline Pill -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary-fixed/60 text-primary rounded-full border border-primary-fixed-dim/40 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wide">OFFLINE READY</span>
+</div>
+<!-- Utilities (Flashlight, Whistle, Language) -->
+<div class="flex items-center gap-1">
+<!-- Language Switcher -->
+<button class="px-2 py-1 rounded-md bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-0.5 active:scale-95 transition-all" id="langToggle">
+<span>ಕನ್ನಡ / ENG</span>
+<span class="material-symbols-outlined text-[16px] leading-none">arrow_drop_down</span>
+</button>
+<!-- Flashlight Button -->
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-90 transition-transform" id="torchBtn" title="Emergency Strobe">
+<span class="material-symbols-outlined text-[19px]">flashlight_on</span>
+</button>
+<!-- Whistle Button -->
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-90 transition-transform" id="whistleBtn" title="Acoustic Alarm">
+<span class="material-symbols-outlined text-[19px]">volume_up</span>
+</button>
+</div>
+</header>
+<!-- App Bar (Anchored Component Blueprint from JSON) -->
+<div class="px-margin-mobile py-space-sm flex items-center justify-between bg-surface">
+<div class="flex items-center gap-2">
+<img alt="AID-ASSIST Shield Emblem" class="w-8 h-8 rounded-md shadow-sm object-contain bg-primary-container p-0.5" src="https://lh3.googleusercontent.com/aida/AEtjO1W_EWTCk_oUgsfNQJKActVEoS8mnrHagExbtRF1HvOcxnALUaRvg7_UTmODzMB4ITF5hxsXA5YoYn0Y21zQDpsr5UIg3cqhriFgSm4KGtcjRmyMt7jFC3nkUBPwphepjezripMOjoO-c4vxwqDmyQ3gQkP26Xr51ITV0po50FpqYElOZ0AHL6enYJiUCbELML6qizx-Jja0IMBPp_gxyrjShSb2XdAsMznJGCbQ6g89sFcvyqzyJbxWnlE"/>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-primary">AID-ASSIST</span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<button aria-label="Emergency translation" class="p-1.5 rounded-full hover:bg-surface-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined">translate</span>
+</button>
+</div>
+</div>
+<main class="flex-1 px-margin-mobile space-y-space-md mt-1">
+<!-- Hero Section: Rich Indigo-Purple Gradient Banner with Brand Logo -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#10069F] via-[#1A0EB8] to-[#2515D4] p-space-md text-on-primary shadow-md">
+<!-- Ambient radial glow -->
+<div class="absolute -right-8 -bottom-8 w-36 h-36 bg-secondary rounded-full blur-2xl opacity-40 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Clinical Trauma Triage</span>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-primary leading-tight font-bold">AID-ASSIST</h1>
+<p class="font-body-md text-body-md text-on-secondary-container/90">First Aid. Anytime. Anywhere.</p>
+</div>
+<!-- Prominent Brand Emblem -->
+<div class="bg-surface-container-lowest/15 p-1.5 rounded-xl backdrop-blur-sm border border-white/20 shrink-0">
+<img alt="AID-ASSIST Primary Emblem" class="w-14 h-14 object-contain rounded-lg shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1W_EWTCk_oUgsfNQJKActVEoS8mnrHagExbtRF1HvOcxnALUaRvg7_UTmODzMB4ITF5hxsXA5YoYn0Y21zQDpsr5UIg3cqhriFgSm4KGtcjRmyMt7jFC3nkUBPwphepjezripMOjoO-c4vxwqDmyQ3gQkP26Xr51ITV0po50FpqYElOZ0AHL6enYJiUCbELML6qizx-Jja0IMBPp_gxyrjShSb2XdAsMznJGCbQ6g89sFcvyqzyJbxWnlE"/>
+</div>
+</div>
+<!-- Elevated High-Contrast Search Bar -->
+<div class="mt-1 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md border-0 shadow-lg focus:ring-2 focus:ring-secondary focus:outline-none" placeholder="What emergency do you need help with?" type="text"/>
+</div>
+</div>
+</section>
+<!-- Critical Emergency Now Card -->
+<section class="rounded-xl bg-surface-container-lowest border-2 border-red-200 p-space-md shadow-sm relative overflow-hidden">
+<!-- Urgency left indicator bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-[#D92D20]"></div>
+<div class="flex flex-col gap-3 pl-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-[#D92D20]"></span>
+</span>
+<span class="font-label-sm text-label-sm text-[#D92D20] tracking-wider uppercase font-bold">EMERGENCY NOW — Life Threatening?</span>
+</div>
+<span class="bg-red-50 text-[#D92D20] font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">PRIORITY 1</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Get immediate medical dispatch, trauma resuscitation steps &amp; GPS coordinates relay.
+          </p>
+<!-- Dominant Emergency Dial Button -->
+<a class="pulse-urgent w-full h-14 rounded-full bg-[#D92D20] hover:bg-[#B42318] active:scale-[0.98] text-white flex items-center justify-center gap-2 shadow-md transition-all" href="tel:112">
+<span class="material-symbols-outlined text-[24px]">call</span>
+<span class="font-emergency-callout text-emergency-callout tracking-wide">CALL 112</span>
+<span class="font-label-sm text-label-sm bg-white/20 px-2 py-0.5 rounded-full ml-1">DIRECT EMS</span>
+</a>
+</div>
+</section>
+<!-- Quick Action Emergency Utilities (4-Column Bento Grid) -->
+<section>
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">Rapid Utilities</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">One-Touch Active</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<!-- SOS 112 -->
+<a class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 hover:border-red-300 active:scale-95 transition-all text-center group" href="tel:112">
+<div class="w-11 h-11 rounded-full bg-red-50 text-[#D92D20] flex items-center justify-center mb-1.5 shadow-sm group-hover:bg-red-100">
+<span class="material-symbols-outlined text-[22px]">emergency</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">SOS 112</span>
+<span class="text-[10px] text-on-surface-variant">Police/Amb</span>
+</a>
+<!-- Acoustic Whistle -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 hover:border-primary-fixed-dim active:scale-95 transition-all text-center group" id="whistleUtility">
+<div class="w-11 h-11 rounded-full bg-primary-fixed text-primary flex items-center justify-center mb-1.5 shadow-sm group-hover:bg-primary-fixed-dim">
+<span class="material-symbols-outlined text-[22px]">campaign</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Whistle</span>
+<span class="text-[10px] text-on-surface-variant">High Decibel</span>
+</button>
+<!-- Strobe Flashlight -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 hover:border-primary-fixed-dim active:scale-95 transition-all text-center group" id="torchUtility">
+<div class="w-11 h-11 rounded-full bg-primary-fixed text-primary flex items-center justify-center mb-1.5 shadow-sm group-hover:bg-primary-fixed-dim">
+<span class="material-symbols-outlined text-[22px]">highlight</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Strobe</span>
+<span class="text-[10px] text-on-surface-variant">Signal SOS</span>
+</button>
+<!-- ICE Contacts -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 hover:border-primary-fixed-dim active:scale-95 transition-all text-center group">
+<div class="w-11 h-11 rounded-full bg-primary-fixed text-primary flex items-center justify-center mb-1.5 shadow-sm group-hover:bg-primary-fixed-dim">
+<span class="material-symbols-outlined text-[22px]">contact_phone</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">ICE Dial</span>
+<span class="text-[10px] text-on-surface-variant">Kin Contact</span>
+</button>
+</div>
+</section>
+<!-- Common Emergencies Grid (Clinical Asymmetric Bento Cards) -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Emergency Protocols (SOPs)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Offline Clinical Guides • Step-by-Step</p>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline flex items-center" href="#">
+            View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Card 1: CPR (Urgent Hero Card) -->
+<div class="col-span-2 p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/50 shadow-sm flex items-start justify-between hover:border-primary-container transition-colors">
+<div class="space-y-1.5 max-w-[70%]">
+<div class="flex items-center gap-1.5">
+<span class="bg-red-100 text-[#D92D20] font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">CRITICAL</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">5 STEPS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">CPR (Cardiac Arrest)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">100-120 BPM chest compressions, AED protocol &amp; rescue breaths.</p>
+<div class="pt-1">
+<span class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">play_circle</span> Start Resuscitation
+                </span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">cardiology</span>
+</div>
+</div>
+<!-- Card 2: Severe Bleeding -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary-container transition-colors">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="bg-red-50 text-[#D92D20] font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold">P1 Alert</span>
+<span class="material-symbols-outlined text-primary text-[20px]">bloodtype</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-semibold pt-1">Severe Bleeding</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Direct pressure, tourniquet application &amp; wound packing.</p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>View Guide</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3: Choking -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary-container transition-colors">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="bg-amber-100 text-[#B54708] font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold">Heimlich</span>
+<span class="material-symbols-outlined text-primary text-[20px]">air</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-semibold pt-1">Choking (Adult/Child)</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">5 back blows followed by 5 abdominal thrusts rhythm.</p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>View Guide</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4: Stroke FAST -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary-container transition-colors">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="bg-purple-100 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold">F.A.S.T</span>
+<span class="material-symbols-outlined text-primary text-[20px]">neurology</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-semibold pt-1">Stroke Evaluation</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Face drooping, Arm weakness, Speech difficulty timeline.</p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>Diagnostic</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 5: Heart Attack -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary-container transition-colors">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="bg-red-50 text-[#D92D20] font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold">Urgent</span>
+<span class="material-symbols-outlined text-primary text-[20px]">ecg_heart</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-semibold pt-1">Heart Attack</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Crushing chest pain, aspirin dosage &amp; resting posture.</p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>View Guide</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 6: Burns & Scalds -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary-container transition-colors">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="bg-amber-100 text-[#B54708] font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold">20 Min Cool</span>
+<span class="material-symbols-outlined text-primary text-[20px]">local_fire_department</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-semibold pt-1">Burns &amp; Scalds</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Cool running water, clean clingfilm dressing rules.</p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>View Guide</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 7: Snake Bite / Envenomation -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary-container transition-colors">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="bg-red-50 text-[#D92D20] font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold">Immobilize</span>
+<span class="material-symbols-outlined text-primary text-[20px]">pest_control</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-semibold pt-1">Snake Bite</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Do NOT cut or suck venom. Pressure immobilization.</p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>View Guide</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 8: Seizure Safety -->
+<div class="col-span-2 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex items-center justify-between hover:border-primary-container transition-colors">
+<div class="space-y-0.5 max-w-[80%]">
+<div class="flex items-center gap-1.5">
+<span class="bg-emerald-100 text-emerald-800 font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold">Recovery</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Convulsion SOP</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-semibold">Seizures &amp; Convulsions</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Protect head, cushion floor, time duration, recovery lateral position.</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+</div>
+</div>
+</div>
+</section>
+<!-- First-Aid Kit Readiness Widget -->
+<section class="rounded-xl bg-[#F5F4FF] border border-primary-fixed-dim/60 p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">sanitizer</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Emergency Kit Readiness</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Household Kit #1 • Verified 12 days ago
+            </p>
+</div>
+<!-- Circular Progress Pill -->
+<div class="relative w-12 h-12 flex items-center justify-center bg-surface-container-lowest rounded-full border-2 border-primary shadow-inner">
+<span class="font-label-md text-label-md font-bold text-primary">75%</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high rounded-full h-2 mt-3 overflow-hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+<!-- Restock Prompt -->
+<div class="mt-3 pt-2.5 border-t border-primary-fixed-dim/40 flex items-center justify-between">
+<div class="flex items-center gap-1 text-[#B54708] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Restock antiseptic &amp; sterile gauze</span>
+</div>
+<button class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-0.5">
+            Audit Kit <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Navigation Bar (Constructed directly from JSON Blueprint) -->
+<!-- Destination count: 5. Active: Home (First Item mapped directly to intent) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs bg-surface-container-lowest border-t border-outline-variant min-h-[64px] shadow-lg max-w-[420px] left-1/2 -translate-x-1/2">
+<!-- Home (ACTIVE STATE derived from style_active_navigation) -->
+<button aria-label="Home" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-3 py-1.5 transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-[10px] leading-tight mt-0.5">Home</span>
+</button>
+<!-- SOPs (INACTIVE STATE) -->
+<button aria-label="SOPs" class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1.5 hover:bg-surface-container-high transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">medical_services</span>
+<span class="font-label-sm text-[10px] leading-tight mt-0.5">SOPs</span>
+</button>
+<!-- Hospitals (INACTIVE STATE) -->
+<button aria-label="Hospitals" class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1.5 hover:bg-surface-container-high transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">local_hospital</span>
+<span class="font-label-sm text-[10px] leading-tight mt-0.5">Hospitals</span>
+</button>
+<!-- Kit (INACTIVE STATE) -->
+<button aria-label="Kit" class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1.5 hover:bg-surface-container-high transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">sanitizer</span>
+<span class="font-label-sm text-[10px] leading-tight mt-0.5">Kit</span>
+</button>
+<!-- Profile (INACTIVE STATE) -->
+<button aria-label="Profile" class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1.5 hover:bg-surface-container-high transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+<span class="font-label-sm text-[10px] leading-tight mt-0.5">Profile</span>
+</button>
+</nav>
+</div>
+<!-- Inline Script for interactive utility toggles (Flashlight, Whistle sound simulation) -->
+<script>
+    // Whistle sound synthesizer using Web Audio API
+    function playWhistleSound() {
+      try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(2600, audioCtx.currentTime); // High pitch distress frequency
+        osc.frequency.exponentialRampToValueAtTime(3200, audioCtx.currentTime + 0.15);
+        osc.frequency.exponentialRampToValueAtTime(2800, audioCtx.currentTime + 0.3);
+
+        gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.35);
+      } catch(e) {
+        console.warn('Audio Context not allowed or initialized yet');
+      }
+    }
+
+    document.getElementById('whistleBtn')?.addEventListener('click', playWhistleSound);
+    document.getElementById('whistleUtility')?.addEventListener('click', playWhistleSound);
+
+    // Strobe Flashlight Simulation
+    let isStrobing = false;
+    const torchBtn = document.getElementById('torchBtn');
+    const torchUtility = document.getElementById('torchUtility');
+
+    function toggleTorch() {
+      isStrobing = !isStrobing;
+      const indicatorColor = isStrobing ? 'text-amber-500' : 'text-on-surface-variant';
+      if (torchBtn) {
+        torchBtn.className = `w-8 h-8 rounded-full flex items-center justify-center ${isStrobing ? 'bg-amber-100 text-amber-600 ring-2 ring-amber-400' : 'text-on-surface-variant hover:bg-surface-container-high'}`;
+      }
+    }
+
+    torchBtn?.addEventListener('click', toggleTorch);
+    torchUtility?.addEventListener('click', toggleTorch);
+
+    // Language switch simulation
+    const langBtn = document.getElementById('langToggle');
+    let isKannada = false;
+    langBtn?.addEventListener('click', () => {
+      isKannada = !isKannada;
+      langBtn.querySelector('span').textContent = isKannada ? 'ENG / ಕನ್ನಡ' : 'ಕನ್ನಡ / ENG';
+    });
+  </script>
+</body></html>

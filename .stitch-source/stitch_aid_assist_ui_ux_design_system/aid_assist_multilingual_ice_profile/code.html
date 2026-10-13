@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AID-ASSIST Emergency Profile &amp; Multilingual Settings</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#05006c",
+            "inverse-on-surface": "#f3eff7",
+            "secondary-fixed-dim": "#c1c1ff",
+            "surface-container-high": "#eae7ee",
+            "outline-variant": "#c7c5d6",
+            "surface-container": "#f0ecf4",
+            "tertiary-container": "#650001",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb4a8",
+            "primary-container": "#10069f",
+            "on-tertiary-fixed": "#410000",
+            "inverse-surface": "#303035",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#c0c1ff",
+            "tertiary": "#3e0000",
+            "surface-tint": "#4a4dce",
+            "surface-container-low": "#f6f2fa",
+            "surface-container-highest": "#e4e1e9",
+            "outline": "#767685",
+            "surface-bright": "#fbf8ff",
+            "secondary": "#3d38e6",
+            "on-background": "#1b1b20",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e1e9",
+            "on-primary-container": "#858aff",
+            "on-secondary-fixed-variant": "#291dd7",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#930002",
+            "on-tertiary-container": "#ff614e",
+            "surface-dim": "#dcd9e0",
+            "surface": "#fbf8ff",
+            "error": "#ba1a1a",
+            "secondary-container": "#5856ff",
+            "on-primary-fixed-variant": "#3032b5",
+            "on-secondary-container": "#f6f2ff",
+            "on-surface": "#1b1b20",
+            "secondary-fixed": "#e1dfff",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-surface-variant": "#464554",
+            "primary-fixed": "#e1e0ff",
+            "primary": "#050066",
+            "on-secondary-fixed": "#09006b",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffdad5",
+            "background": "#fbf8ff",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "margin": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": [
+              "Playfair Display"
+            ],
+            "body-xl": [
+              "Inter"
+            ],
+            "headline-sm": [
+              "Inter"
+            ],
+            "headline-lg-mobile": [
+              "Playfair Display"
+            ],
+            "label-sm": [
+              "Inter"
+            ],
+            "label-md": [
+              "Inter"
+            ],
+            "body-md": [
+              "Inter"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "body-sm": [
+              "Inter"
+            ],
+            "headline-md": [
+              "Playfair Display"
+            ],
+            "emergency-callout": [
+              "Inter"
+            ],
+            "headline-xl": [
+              "Playfair Display"
+            ],
+            "label-lg": [
+              "Inter"
+            ],
+            "headline-lg": [
+              "Playfair Display"
+            ]
+          },
+          "fontSize": {
+            "headline-xl-mobile": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-xl": [
+              "18px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-sm": [
+              "18px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg-mobile": [
+              "24px",
+              {
+                "lineHeight": "30px",
+                "letterSpacing": "0em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-md": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "body-sm": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "22px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "emergency-callout": [
+              "20px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "0.03em",
+                "fontWeight": "800"
+              }
+            ],
+            "headline-xl": [
+              "40px",
+              {
+                "lineHeight": "48px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-lg": [
+              "15px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "30px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary selection:text-on-primary">
+<!-- Mobile Viewport Container (390px baseline) -->
+<div class="w-full max-w-[420px] min-h-screen bg-background relative flex flex-col pb-[84px] shadow-2xl">
+<!-- Shared TopAppBar Execution (From JSON) -->
+<header class="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-margin-mobile py-space-sm h-14 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none max-w-[420px] mx-auto right-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary text-[22px]" data-icon="emergency">emergency</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-primary dark:text-inverse-primary">AID-ASSIST</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Language Selector Active" class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-inverse-surface text-primary dark:text-inverse-primary transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="translate">translate</span>
+</button>
+</div>
+</header>
+<!-- Canvas Base Content -->
+<main class="flex-1 mt-14 px-margin-mobile pt-space-md space-y-space-lg">
+<!-- Hero Header Section -->
+<section class="rounded-xl bg-primary-container text-on-primary p-space-md shadow-md relative overflow-hidden">
+<!-- Subtle ambient circle glow -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-secondary rounded-full filter blur-2xl opacity-40 pointer-events-none"></div>
+<div class="flex items-start gap-space-md relative z-10">
+<img alt="AID-ASSIST Brand Shield" class="w-14 h-14 rounded-lg object-contain bg-surface-container-lowest p-1 shadow-sm border border-secondary-fixed" src="https://lh3.googleusercontent.com/aida/AEtjO1W_EWTCk_oUgsfNQJKActVEoS8mnrHagExbtRF1HvOcxnALUaRvg7_UTmODzMB4ITF5hxsXA5YoYn0Y21zQDpsr5UIg3cqhriFgSm4KGtcjRmyMt7jFC3nkUBPwphepjezripMOjoO-c4vxwqDmyQ3gQkP26Xr51ITV0po50FpqYElOZ0AHL6enYJiUCbELML6qizx-Jja0IMBPp_gxyrjShSb2XdAsMznJGCbQ6g89sFcvyqzyJbxWnlE"/>
+<div class="flex-1">
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-on-primary-container bg-primary/40 px-2 py-0.5 rounded-full border border-on-primary-container/30">ICE System Active</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-primary mt-1">Emergency Profile</h1>
+<p class="font-body-sm text-body-sm text-surface-variant/90 mt-0.5">Multilingual Readiness &amp; ICE Medical Info</p>
+</div>
+</div>
+<!-- Offline Status Pill inside Hero -->
+<div class="mt-space-md pt-space-sm border-t border-on-primary-container/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#18864B] ring-4 ring-[#18864B]/20"></span>
+<span class="font-label-md text-label-md text-on-primary font-medium">100% Offline Medical Cache</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/15 px-2 py-0.5 rounded text-white">142 MB Ready</span>
+</div>
+</section>
+<!-- Language Selector Section (Prompt 28 & 29 specifications) -->
+<section class="space-y-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Emergency Language</h2>
+<span class="font-label-sm text-label-sm text-primary font-bold bg-primary-fixed px-2 py-0.5 rounded-full">Zero Latency</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium mt-0.5">ತುರ್ತು ಭಾಷೆ / आपातकालीन भाषा</p>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-relaxed">
+            All SOP voice guides and text will adapt instantly without internet connection.
+          </p>
+</div>
+<!-- 10 Indian & Regional Language Cards Bento Grid -->
+<div class="grid grid-cols-2 gap-gutter-mobile pt-1">
+<!-- 1. English -->
+<button class="flex flex-col items-start justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left min-h-[72px] shadow-sm">
+<div class="w-full flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">English</span>
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="volume_up">volume_up</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-normal">Default Audio</span>
+</button>
+<!-- 2. Hindi -->
+<button class="flex flex-col items-start justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left min-h-[72px] shadow-sm">
+<div class="w-full flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">हिन्दी</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">HI</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Hindi</span>
+</button>
+<!-- 3. Kannada (SELECTED STATE: Deep purple #10069F, White Text, White checkmark badge 'ಸಕ್ರಿಯವಾಗಿದೆ') -->
+<button class="col-span-2 flex items-center justify-between p-4 rounded-xl bg-primary-container text-on-primary shadow-md ring-2 ring-secondary transition-all text-left relative overflow-hidden">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-primary shadow-inner">
+<span class="material-symbols-outlined text-[24px]" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-white tracking-wide">ಕನ್ನಡ</span>
+<span class="font-label-sm text-label-sm text-primary-fixed bg-white/20 px-2 py-0.5 rounded-full font-semibold">Kannada</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-0.5">Selected Primary Resuscitation Audio</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="bg-surface-container-lowest text-primary text-label-sm font-label-sm font-bold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1">
+                ಸಕ್ರಿಯವಾಗಿದೆ
+              </span>
+</div>
+</button>
+<!-- 4. Bengali -->
+<button class="flex flex-col items-start justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left min-h-[72px] shadow-sm">
+<div class="w-full flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">বাংলা</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">BN</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Bengali</span>
+</button>
+<!-- 5. Telugu -->
+<button class="flex flex-col items-start justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left min-h-[72px] shadow-sm">
+<div class="w-full flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">తెలుగు</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">TE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Telugu</span>
+</button>
+<!-- 6. Marathi -->
+<button class="flex flex-col items-start justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left min-h-[72px] shadow-sm">
+<div class="w-full flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">मराठी</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">MR</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Marathi</span>
+</button>
+<!-- 7. Tamil -->
+<button class="flex flex-col items-start justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left min-h-[72px] shadow-sm">
+<div class="w-full flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">தமிழ்</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">TA</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Tamil</span>
+</button>
+<!-- 8. Gujarati -->
+<button class="flex flex-col items-start justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left min-h-[72px] shadow-sm">
+<div class="w-full flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">ગુજરાતી</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">GU</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Gujarati</span>
+</button>
+<!-- 9. Malayalam -->
+<button class="flex flex-col items-start justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left min-h-[72px] shadow-sm">
+<div class="w-full flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">മലയാളം</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">ML</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Malayalam</span>
+</button>
+<!-- 10. Urdu (with RTL note) -->
+<button class="col-span-2 flex items-center justify-between p-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high transition-all active:scale-[0.98] text-left shadow-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-outline font-semibold">RTL Engine</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Urdu Support</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" dir="rtl">اردو</span>
+</button>
+</div>
+<!-- Audio prompt preview button -->
+<div class="pt-2">
+<button class="w-full h-12 rounded-xl bg-secondary-fixed text-primary flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold border border-secondary-fixed-dim hover:bg-secondary-fixed-dim transition-all active:scale-[0.98] shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="volume_up">volume_up</span>
+<span>Listen to CPR preview in ಕನ್ನಡ</span>
+</button>
+</div>
+</section>
+<!-- Medical ICE (In Case of Emergency) Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md space-y-space-md shadow-sm">
+<!-- Section Header with Quick Alert Indicator -->
+<div class="flex items-center justify-between border-b border-surface-container-high pb-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="medical_information">medical_information</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Medical ICE Card</h3>
+<p class="font-body-sm text-body-sm text-outline">Paramedic Priority Access</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-[#18864B] bg-[#D1FADF] px-2.5 py-1 rounded-full font-bold">VERIFIED</span>
+</div>
+<!-- Patient Demographics & Blood Group -->
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Registered Patient</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">Arjun Narayanan</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Age 34 • Male • Organ Donor</span>
+</div>
+<!-- Blood Group Badge in High Contrast Red -->
+<div class="flex flex-col items-center justify-center bg-[#D92D20] text-white px-3 py-2 rounded-lg shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-extrabold text-white/90">Blood</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tight leading-none mt-0.5">O+</span>
+<span class="font-label-sm text-label-sm text-white/90 font-medium">Positive</span>
+</div>
+</div>
+<!-- Allergies & Medical Warnings -->
+<div class="space-y-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[18px]" data-icon="warning">warning</span>
+            Severe Drug Allergies (Contraindications)
+          </span>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="bg-[#FFFBEB] text-[#B54708] border border-[#FEE4E2] font-label-md text-label-md font-bold px-3 py-1 rounded-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              Penicillin
+            </span>
+<span class="bg-[#FFFBEB] text-[#B54708] border border-[#FEE4E2] font-label-md text-label-md font-bold px-3 py-1 rounded-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              NSAIDs (Ibuprofen/Aspirin)
+            </span>
+</div>
+</div>
+<!-- Emergency Contacts (ICE) -->
+<div class="space-y-2.5 pt-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Emergency ICE Contacts</span>
+<!-- Primary ICE Contact -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container-low transition-colors">
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-primary text-white px-1.5 py-0.2 rounded font-bold">1st</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Priya Sharma</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Spouse • Primary Guardian</p>
+</div>
+<a class="h-10 px-3 rounded-lg bg-[#D92D20] text-white flex items-center gap-1.5 font-label-md text-label-md font-bold shadow-sm active:scale-95 transition-all" href="tel:+919876543210">
+<span class="material-symbols-outlined text-[18px]" data-icon="call">call</span>
+<span>Quick Dial</span>
+</a>
+</div>
+<!-- Secondary ICE Contact -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container-low transition-colors">
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-outline text-white px-1.5 py-0.2 rounded font-bold">2nd</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Dr. Ramesh Rao</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Physician • Manipal Hospital</p>
+</div>
+<a class="h-10 px-3 rounded-lg bg-surface-container-high text-primary hover:bg-secondary-fixed flex items-center gap-1.5 font-label-md text-label-md font-bold transition-all active:scale-95 border border-outline-variant" href="tel:+919876543211">
+<span class="material-symbols-outlined text-[18px]" data-icon="call">call</span>
+<span>Dial</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Offline Pack Management Section -->
+<section class="p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="cloud_done">cloud_done</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Offline Emergency Database</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#18864B] bg-[#D1FADF] px-2 py-0.5 rounded-full font-bold">142 MB</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline leading-normal">
+          Full triage manuals, 3D anatomical charts, and offline Indian language voice packs ready.
+        </p>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container-high">
+<div class="flex items-center gap-1.5 text-[#18864B]">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">Last synced 2 days ago</span>
+</div>
+<button class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync">sync</span>
+            Force Update
+          </button>
+</div>
+</section>
+<!-- High Priority Quick Action Dial Trigger (Bottom Triage Banner) -->
+<section class="pt-1">
+<a class="w-full h-14 bg-[#D92D20] hover:bg-[#B42318] text-white rounded-full flex items-center justify-center gap-3 shadow-lg active:scale-[0.98] transition-all" href="tel:112">
+<span class="material-symbols-outlined text-[24px]" data-icon="call">call</span>
+<span class="font-emergency-callout text-emergency-callout font-extrabold uppercase tracking-wider">CALL 112 DIRECT EMS</span>
+</a>
+</section>
+</main>
+<!-- Shared BottomNavBar Execution (From JSON) -->
+<!-- Profile screen active mapping locks 'Profile' tab with style_active_navigation and inactive on others -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline min-h-[64px] max-w-[420px] mx-auto right-0 shadow-lg dark:shadow-none">
+<!-- Tab 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-2 py-1.5 hover:bg-surface-container-high dark:hover:bg-inverse-surface hover:text-on-surface dark:hover:text-inverse-on-surface active:scale-95 transition-all duration-150" href="#home">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">Home</span>
+</a>
+<!-- Tab 2: SOPs (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-2 py-1.5 hover:bg-surface-container-high dark:hover:bg-inverse-surface hover:text-on-surface dark:hover:text-inverse-on-surface active:scale-95 transition-all duration-150" href="#sops">
+<span class="material-symbols-outlined text-[22px]" data-icon="medical_services">medical_services</span>
+<span class="text-label-sm font-label-sm mt-0.5">SOPs</span>
+</a>
+<!-- Tab 3: Hospitals (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-2 py-1.5 hover:bg-surface-container-high dark:hover:bg-inverse-surface hover:text-on-surface dark:hover:text-inverse-on-surface active:scale-95 transition-all duration-150" href="#hospitals">
+<span class="material-symbols-outlined text-[22px]" data-icon="local_hospital">local_hospital</span>
+<span class="text-label-sm font-label-sm mt-0.5">Hospitals</span>
+</a>
+<!-- Tab 4: Kit (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-2 py-1.5 hover:bg-surface-container-high dark:hover:bg-inverse-surface hover:text-on-surface dark:hover:text-inverse-on-surface active:scale-95 transition-all duration-150" href="#kit">
+<span class="material-symbols-outlined text-[22px]" data-icon="sanitizer">sanitizer</span>
+<span class="text-label-sm font-label-sm mt-0.5">Kit</span>
+</a>
+<!-- Tab 5: Profile (ACTIVE STATE - Locked by Semantic Hierarchy Rule) -->
+<a class="flex flex-col items-center justify-center bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container rounded-full px-3 py-1.5 transition-colors duration-200 active:scale-95" href="#profile">
+<span class="material-symbols-outlined text-[22px]" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="text-label-sm font-label-sm font-bold mt-0.5">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

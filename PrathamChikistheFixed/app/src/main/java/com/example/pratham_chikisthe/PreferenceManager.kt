@@ -1,6 +1,7 @@
 package com.example.pratham_chikisthe
 
 import android.content.Context
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
@@ -16,6 +17,16 @@ class PreferenceManager(private val context: Context) {
     private val emergencyContactKey = stringPreferencesKey("emergency_contact")
     private val emergencyContactsKey = stringSetPreferencesKey("emergency_contacts")
     private val checkedItemsKey = stringSetPreferencesKey("checked_items")
+    private val selectedLanguageKey = stringPreferencesKey("selected_language")
+    private val isLanguageSetKey = booleanPreferencesKey("is_language_set")
+
+    val getSelectedLanguage: Flow<String> = context.prathamDataStore.data.map { preferences ->
+        preferences[selectedLanguageKey] ?: "en"
+    }
+
+    val isLanguageSet: Flow<Boolean> = context.prathamDataStore.data.map { preferences ->
+        preferences[isLanguageSetKey] ?: false
+    }
 
     val getName: Flow<String> = context.prathamDataStore.data.map { preferences ->
         preferences[nameKey].orEmpty()
@@ -35,6 +46,13 @@ class PreferenceManager(private val context: Context) {
 
     val getCheckedItems: Flow<Set<String>> = context.prathamDataStore.data.map { preferences ->
         preferences[checkedItemsKey] ?: emptySet()
+    }
+
+    suspend fun setSelectedLanguage(languageCode: String) {
+        context.prathamDataStore.edit { preferences ->
+            preferences[selectedLanguageKey] = languageCode
+            preferences[isLanguageSetKey] = true
+        }
     }
 
     suspend fun saveData(name: String, bloodGroup: String, emergencyContact: String) {

@@ -4,13 +4,26 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+    
+    <!-- Outer Shield / Assistance "A" Chevron -->
+
+    <!-- Safe zone (36 to 72) centered geometric A-Chevron + Medical Aid mark -->
+    <!-- Geometric Chevron "A" frame -->
     <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M54,16C33,16 16,33 16,54s17,38 38,38 38,-17 38,-38S75,16 54,16z" />
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,20 L82,78 L68,78 L54,48 L40,78 L26,78 Z" />
+        
+    <!-- Integrated Medical Cross emblem inside center -->
     <path
-        android:fillColor="#DC2626"
-        android:pathData="M49,33h10v16h16v10H59v16H49V59H33V49h16z" />
+        android:fillColor="#10069F"
+        android:pathData="M50,56 h8 v6 h-8 z M50,68 h8 v6 h-8 z" />
+        android:pathData="M54,26 L76,74 L65,74 L54,50 L43,74 L32,74 Z" />
+
+    <!-- Pure bold Medical Cross emblem placed cleanly -->
+    <!-- Pure Medical Cross Emblem in center -->
     <path
-        android:fillColor="#0B5ED7"
-        android:pathData="M37,80h34v6H37z" />
+        android:fillColor="#FFFFFF"
+        android:pathData="M49,36 h10 v12 h12 v10 h-12 v12 h-10 v-12 h-12 v-10 h12 z" />
+        android:pathData="M50,42 h8 v8 h8 v8 h-8 v8 h-8 v-8 h-8 v-8 h8 z" />
+
 </vector>

@@ -2,17 +2,41 @@ package com.example.pratham_chikisthe.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val NightBackground = Color(0xFF060D22)
-val NightSurface = Color(0xFF232A3E)
-val NightSurfaceAlt = Color(0xFF1A2238)
-val NightTextPrimary = Color(0xFFE5EAF6)
-val NightTextMuted = Color(0xFF9AA4BE)
-val ActionBlue = Color(0xFFAFC5FF)
-val ActionBlueDark = Color(0xFF3E476B)
+// AID-ASSIST Brand Palette centered around #10069F
+val PrimaryBlue = Color(0xFF10069F)
+val OnPrimaryWhite = Color(0xFFFFFFFF)
+val PrimaryContainerLight = Color(0xFFE0E0FF)
+val OnPrimaryContainerLight = Color(0xFF02006D)
+
+val SecondaryNavy = Color(0xFF4355B9)
+val SecondaryContainerLight = Color(0xFFDEE0FF)
+val OnSecondaryContainerLight = Color(0xFF00105C)
+
+val SurfaceLight = Color(0xFFFBF8FF)
+val OnSurfaceLight = Color(0xFF1B1B21)
+val SurfaceVariantLight = Color(0xFFE2E1EC)
+val OnSurfaceVariantLight = Color(0xFF45464F)
+val BackgroundLight = Color(0xFFFBF8FF)
+val OnBackgroundLight = Color(0xFF1B1B21)
+val OutlineLight = Color(0xFF767680)
+
+val ErrorRed = Color(0xFFBA1A1A)
+val ErrorContainerLight = Color(0xFFFFDAD6)
+val OnErrorContainerLight = Color(0xFF410002)
 
 val EmergencyRed = Color(0xFFD32F2F)
-val EmergencyRedDark = Color(0xFF9A0007)
-val EmergencyRedLight = Color(0xFFFFCDD2)
-val MedicalBlue = Color(0xFF1565C0)
-val MedicalBlueLight = Color(0xFFBBDEFB)
-val SoftBackground = Color(0xFFFFFBFE)
+val WarningAmber = Color(0xFFF57C00)
+val SuccessGreen = Color(0xFF2E7D32)
+
+// Dark Palette
+val PrimaryDark = Color(0xFFBEC2FF)
+val OnPrimaryDark = Color(0xFF10069F)
+val PrimaryContainerDark = Color(0xFF2828B8)
+val OnPrimaryContainerDark = Color(0xFFE0E0FF)
+
+val SurfaceDark = Color(0xFF12131C)
+val OnSurfaceDark = Color(0xFFE4E1EC)
+val SurfaceVariantDark = Color(0xFF2B2B38)
+val OnSurfaceVariantDark = Color(0xFFC6C5D0)
+val BackgroundDark = Color(0xFF12131C)
+val OnBackgroundDark = Color(0xFFE4E1EC)
